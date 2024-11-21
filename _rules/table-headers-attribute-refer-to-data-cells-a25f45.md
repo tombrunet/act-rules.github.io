@@ -51,7 +51,7 @@ Each target's [attribute value][] is a [set of space separated tokens][], and no
 
 ## Accessibility Support
 
-Screen reader support for the `headers` attribute does not follow the HTML specification at this time. Some screen readers will allow `td` elements to be referenced by the `headers` attribute. Other screen readers will ignore the `headers` attribute completely and look for `th` elements within the column.
+Screen reader support for the `headers` attribute does not follow the HTML specification at this time. Some screen readers will allow `td` elements to be referenced by the `headers` attribute. Other screen readers will ignore the `headers` attribute completely and look for `th` elements within the column. Note also that HTML specification says that the `headers` element must reference a `th` element, but some screen readers allow `headers` to reference semantic headers (i.e., ARIA role defined) also.
 
 ## Background
 
