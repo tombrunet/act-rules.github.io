@@ -312,8 +312,8 @@ The `headers` attribute on the data cells refers to a `td` element within the sa
 <table>
 	<thead>
 		<tr>
-			<td id="header1">Projects</th>
-			<td id="header2">Objective</th>
+			<td id="header1">Projects</td>
+			<td id="header2">Objective</td>
 		</tr>
 	</thead>
 	<tbody>
