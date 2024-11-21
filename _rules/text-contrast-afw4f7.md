@@ -139,12 +139,10 @@ This 14pt bold black text has a contrast ratio of 3.6:1 on the gray background.
 
 #### Passed Example 7
 
-This text does not convey anything in human language.
+The content of this button ("X") does not convey anything in human language; therefore, it passes the rule regardless of its contrast ratio. However, [Success Criterion 1.4.11 Non-Text Content][sc1411] should be examined for this non-text element.
 
 ```html
-<p style="color: #000; background: #666;">
-	----=====++++++++___________***********%%%%%%%%%%%±±±±@@@@@@@@
-</p>
+<button style="color: #666; background-color: #000" aria-label="Close">X</button>
 ```
 
 #### Passed Example 8
@@ -298,6 +296,16 @@ This text in a [semantic button][semantic role] has a contrast ratio of 3.85:1.
 <div role="button" style="color: #777; background: #EEE;">My button!</div>
 ```
 
+#### Failed Example 11
+
+The grey text has a contrast between 2.7:1 and 2.9:1 against the grey text shadow.
+
+```html
+<p style="background: #fff; color: #666; text-shadow: #aaa 2px 2px 4px, #aaa -2px 2px 4px, #aaa 2px -2px 4px, #aaa -2px -2px 4px;">
+    Some text in a human language
+  </p>
+```
+
 ### Inapplicable
 
 #### Inapplicable Example 1
@@ -436,3 +444,4 @@ This text is part of a [disabled][] widget because it is a child of an element w
 [user origin]: https://www.w3.org/TR/css3-cascade/#cascade-origin-user 'CSS 3, user origin'
 [visible]: #visible 'Definition of Visible'
 [html element]: #namespaced-element
+[sc1411]: https://www.w3.org/TR/WCAG22/#non-text-contrast
