@@ -51,7 +51,7 @@ Each target's [attribute value][] is a [set of space separated tokens][], and no
 
 ## Accessibility Support
 
-There are no accessibility support issues known.
+Screen reader support for the `headers` attribute does not follow the HTML specification at this time. Some screen readers will allow `td` elements to be referenced by the `headers` attribute. Other screen readers will ignore the `headers` attribute completely and look for `th` elements within the column.
 
 ## Background
 
@@ -117,8 +117,8 @@ The `headers` attribute on the data cells in the second row refers to a `th` ele
 <table>
 	<thead>
 		<tr>
-			<th role="columnheader" id="header1">Projects</th>
-			<th role="columnheader" id="header2">Objective</th>
+			<th id="header1">Projects</th>
+			<th id="header2">Objective</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -301,6 +301,27 @@ The `headers` attribute on the data cells in the second row refers to an element
 			10%
 		</td>
 	</tr>
+</table>
+```
+
+#### Failed Example 5
+
+The `headers` attribute on the data cells refers to a `td` element within the same `table` and not a `th` element.
+
+```html
+<table>
+	<thead>
+		<tr>
+			<td id="header1">Projects</th>
+			<td id="header2">Objective</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td headers="header1">15%</td>
+			<td headers="header2">10%</td>
+		</tr>
+	</tbody>
 </table>
 ```
 
